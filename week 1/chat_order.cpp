@@ -7,28 +7,24 @@ int main() {
     
     int n;
     cin >> n;
-    unordered_map<string, int> fr;
-    deque<string> dq;
+    unordered_map<string, bool> mp;
+    vector<string> v;
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++)
+    {
         string name;
         cin >> name;
-
-        if (fr[name]) {
-            for (auto &i : dq) {
-                if (i == name) {
-                    i = "";
-                    break;
-                }
-            }
+        v.push_back(name);
+    }
+    
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (!mp[v[i]])
+        {
+            cout << v[i] << endl;
+            mp[v[i]] = true;
         }
-        
-        dq.push_front(name);
-        fr[name] = 1;
     }
-
-    for (auto name : dq) {
-        cout << name << endl;
-    }
+    
     return 0;
 }
