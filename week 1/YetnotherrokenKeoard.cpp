@@ -4,48 +4,48 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    
+
     int t;
     cin >> t;
 
     while (t--)
     {
+
         string s;
         cin >> s;
+        int len_s = s.size();
 
-        for (int i = 0; i < s.size(); i++)
+        int lower = 0, upper = 0;
+
+        deque<char> d;
+
+        for (int i = len_s - 1; i >= 0; i--)
         {
             if (s[i] == 'B')
             {
-                s.erase(i, 1);
-                i--;
-                for (int j = i; j >= 0; j--)
-                {
-                    if (s[j] >= 'A' && s[j] <= 'Z')
-                    {
-                        s.erase(j, 1);
-                        i--;
-                        break;
-                    }
-                }
-            } else if (s[i] == 'b') {
-                s.erase(i, 1);
-                i--;
-                for (int j = i; j >= 0; j--)
-                {
-                    if (s[j] >= 'a' && s[j] <= 'z')
-                    {
-                        s.erase(j, 1);
-                        i--;
-                        break;
-                    }
-                }
+                upper++;
+                continue;
             }
+            if (s[i] == 'b')
+            {
+                lower++;
+                continue;
+            }
+            if (upper && isupper(s[i]))
+            {
+                upper--;
+                continue;
+            }
+            if (lower && islower(s[i]))
+            {
+                lower--;
+                continue;
+            }
+            d.push_front(s[i]);
         }
-
-        cout << s << endl;
+        for(auto &it : d) cout << it;
+        cout << "\n";
+            
     }
-    
-    
     return 0;
 }
