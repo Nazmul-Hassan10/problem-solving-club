@@ -17,15 +17,24 @@ void solve(){
         dq.push_front(s[i]);
 
         if (!insertion_done && i > 0 && s[i] == s[i - 1]) {
-            char insert_char = (s[i] == 'z' ? 'y' : s[i] + 1);
+            char insert_char = (s[i] == 'z' ? 'a' : s[i] + 1);
             dq.push_front(insert_char);
             insertion_done = true;
         }
     }
 
     if (!insertion_done) {
-        char insert_char = (s[0] == 'a') ? 'b' : s[0] + 1;
+        char insert_char;
+        if (s[0] == 'a') {
+            insert_char = 'b';
+        } else if (s[0] == 'z') {
+            insert_char = 'a';
+        } else {
+            insert_char = s[0] + 1;
+        }
+
         dq.push_front(insert_char);
+        
     }
     
     for (auto ch : dq) cout << ch;  
