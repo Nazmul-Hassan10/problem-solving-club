@@ -18,7 +18,7 @@ int main() {
         }
 
         priority_queue<int> bonus;
-        int hero_total = 0;
+        long long hero_total = 0;
         for (int i = 0; i < n; i++) {
             if (v[i] == 0) {
                 if (!bonus.empty()) {
