@@ -14,15 +14,20 @@ int main() {
         cin >> v[i];
     }
 
-    int l = 0, r = 0, ans = 0;
+    long long l = 0, r = 0, ans = 0;
     long long sum = 0;
     while (r < n) {
         sum += v[r];
         if (sum <= k) {
-            ans = max(ans, r - l + 1);
+            ans += (r - l + 1);
         } else {
-            sum -= v[l];
-            l++;
+            while (sum > k && l < r) {
+                sum -= v[l];
+                l++;
+            }
+            if (sum <= k) {
+                ans += (r - l + 1);
+            }
         }
         r++;
     }

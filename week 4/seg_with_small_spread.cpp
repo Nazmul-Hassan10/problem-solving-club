@@ -8,7 +8,6 @@ int main() {
     int n;
     long long k;
     cin >> n >> k;
-
     vector<int> v(n);
     for (int i = 0; i < n; i++) {
         cin >> v[i];
@@ -27,8 +26,7 @@ int main() {
         r++;
     }
 
-    // cout << sum << endl;
-    cout << ans << endl;
+    cout << ans << '\n';
 
     return 0;
 }
