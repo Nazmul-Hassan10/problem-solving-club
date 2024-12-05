@@ -1,0 +1,1 @@
+int need_scr_b = (15 * for_b) - box_b;
