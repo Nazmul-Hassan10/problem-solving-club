@@ -24,8 +24,8 @@ int main() {
         v.push_back(n);
         cout << v.size() << endl;
 
-        for (auto value : v) {
-            cout << value << " ";
+        for (auto it : v) {
+            cout << it << " ";
         }
         cout << endl;
     }
