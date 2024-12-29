@@ -1,21 +1,9 @@
-10
-6
-NENSNE
+4
+5
+1 1 0 0 0
+1
+1
 3
-WWW
+0 1 1
 6
-NESSWS
-2
-SN
-2
-WE
-4
-SSNN
-4
-WESN
-2
-SS
-4
-EWNN
-4
-WEWE
+1 0 0 1 1 0
