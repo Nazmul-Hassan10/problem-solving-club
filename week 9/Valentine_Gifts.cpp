@@ -34,18 +34,6 @@ bool isPrime(T n) {
     return true;
 }
 
-int power(int x, int n) {
-    int ans = 1 % MOD;
-    while (n) {
-        if (n & 1) {
-            ans = (1LL * ans % MOD * x % MOD) % MOD;
-        }
-        x = 1LL * x * x % MOD;
-        n >>= 1;
-    }
-    return ans;
-}
-
 /*kaede senpai*/
 int main() {
     ios::sync_with_stdio(false);
@@ -54,9 +42,13 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int x, n;
-        cin >> x >> n;
-        cout << power(x, n);
+        int n;
+        cin >> n;
+        if (n < 127) {
+            cout << "NO" << endl;
+        } else {
+            cout << "YES" << endl;
+        }
     }
 
     return 0;
