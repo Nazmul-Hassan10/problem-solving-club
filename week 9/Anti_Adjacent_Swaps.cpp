@@ -42,14 +42,29 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int x, y;
-        cin >> x >> y;
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) {
+            cin >> v[i];
+        }
 
-        int k;
-        if (x == 2) {
-            cout << y << endl;
+        if (n == 1) {
+            cout << "YES" << endl;
+        } else if (n == 2) {
+            if (v[0] <= v[1]) {
+                cout << "YES" << endl;
+            } else {
+                cout << "NO" << endl;
+            }
+        } else if (n == 3) {
+            if (v[0] <= v[1] && v[1] <= v[2] || v[0] >= v[1] && v[1] >= v[2]) {
+                cout << "YES" << endl;
+            } else {
+                cout << "NO" << endl;
+            }
         } else {
-            cout << y / (x - 1) << endl;
+            cout << "YES" << endl;
         }
     }
 
